@@ -2,7 +2,6 @@ var jsdom = require('jsdom');
 var _ = require('underscore');
 var validUrl = require('valid-url');
 var exec = require('child_process').exec;
-var fs = require('fs');
 
 jsdom.env('https://www.hipchat.com/emoticons', ['http://code.jquery.com/jquery-1.8.3.min.js'], function(errors, window) {
     var $ = window.jQuery;
@@ -23,6 +22,5 @@ jsdom.env('https://www.hipchat.com/emoticons', ['http://code.jquery.com/jquery-1
                 exec('wget ' + url + ' -O ./emoticons/' + name);
             }
         });
-
     });
 });
