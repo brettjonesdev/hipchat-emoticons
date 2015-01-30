@@ -18,8 +18,9 @@ jsdom.env('https://www.hipchat.com/emoticons', ['http://code.jquery.com/jquery-1
     exec('rm -rf ./emoticons; mkdir ./emoticons', function() {
         _.each(emoticons, function(url, name) {
             if ( validUrl.isUri(url) && /^\w+$/.test(name)) {
+                var extension = url.match(/.(\w+)$/)[0];
                 console.log("Downloading", url, name);
-                exec('wget ' + url + ' -O ./emoticons/' + name);
+                exec('wget ' + url + ' -O ./emoticons/' + name + extension);
             }
         });
     });

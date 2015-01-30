@@ -4,6 +4,7 @@
   "description": "Hipchat emoticons downloader",
   "main": "app.js",
   "dependencies": {
+    "form-data": "^0.2.0",
     "jsdom": "^3.1.0",
     "underscore": "^1.7.0",
     "valid-url": "^1.0.9"
